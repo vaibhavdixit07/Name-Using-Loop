@@ -1,6 +1,6 @@
 # Name Using Loop
 
-It will print nameusing for loop __VAIBHAV__
+It will print name using for loop __VAIBHAV__
 
 Example-
 ```
