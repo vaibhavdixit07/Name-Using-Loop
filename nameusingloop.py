@@ -64,7 +64,10 @@ def name_formation(rows):
                     print(" ", end="")
             else:
                 if j == 1:
-                    print(" ", end="")
+                    if i == 1 or i == rows:
+                        print("*", end="")
+                    else:
+                        print(" ", end="")
                 else:
                     print("*", end="")
         for j in range(rows):
@@ -73,9 +76,12 @@ def name_formation(rows):
                     print("*",end="")
                 else:
                     print(" ", end="")
-            elif 2 <= i <mid+1 or i <= rows -1:
+            elif i <mid or i <rows -1 :
                 if j==rows-2:
-                    print(" ",end="")
+                    if i==1 or i==rows:
+                        print("*", end="")
+                    else:
+                        print(" ",end="")
                 else:
                     print("*", end="")
             else:
