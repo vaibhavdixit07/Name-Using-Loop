@@ -51,8 +51,37 @@ def name_formation(rows):
                 continue
             else:
                 print("*", end="")
-        print()
 
+        print(" " * 2, end="")
+
+        # For letter "B"
+        mid = rows // 2
+        if i == 2 or i == rows-1 or i == mid+1:
+            print("*", end="")
+        for j in range(rows):
+            if i == 2 or i == rows-1 or i == mid+1:
+                if j < rows - 1:
+                    print(" ", end="")
+            else:
+                if j == 1:
+                    print(" ", end="")
+                else:
+                    print("*", end="")
+        for j in range(rows):
+            if i == 2 or i == rows-1 or i == mid+1:
+                if j>=rows-2:
+                    print("*",end="")
+                else:
+                    print(" ", end="")
+            elif 2 <= i <mid+1 or i <= rows -1:
+                if j==rows-2:
+                    print(" ",end="")
+                else:
+                    print("*", end="")
+            else:
+                print("*", end="")
+
+        print()
 
 if __name__ == '__main__':
     rows_number = int(input("Enter the rows:"))
