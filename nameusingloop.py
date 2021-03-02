@@ -1,6 +1,5 @@
-
 def name_formation(rows):
-    '''It will print name "VAIBHAV"'''
+    """It will print name "VAIBHAV\""""
     # Outer loop will print number of rows
     for i in range(1, rows + 1):
         # Inner loop will print number of Astrisk
@@ -29,25 +28,25 @@ def name_formation(rows):
         # For letter "I"
         if i == 2 or i == rows - 1:
             print("*" + " " * (rows - 1), end="")
-        elif i > 2 and i < rows - 1:
+        elif 2 < i < rows - 1:
             if rows % 2 == 0:
                 print("*" * (rows // 2) + " " * (rows // 2), end="")
             else:
                 print("*" * (rows // 2 + 1) + " " * (rows // 2), end="")
         for j in range(rows):
-            if i >= 2 and i <= rows - 1:
+            if 2 <= i <= rows - 1:
                 continue
             else:
                 print("*", end="")
         if i == 2 or i == rows - 1:
             print(" " * (rows - 1) + "*", end="")
-        elif i > 2 and i < rows - 1:
+        elif 2 < i < rows - 1:
             if rows % 2 == 0:
                 print(" " * (rows // 2) + "*" * (rows // 2), end="")
             else:
                 print(" " * (rows // 2) + "*" * (rows // 2 + 1), end="")
         for j in range(rows):
-            if i >= 2 and i <= rows - 1:
+            if 2 <= i <= rows - 1:
                 continue
             else:
                 print("*", end="")
@@ -56,10 +55,10 @@ def name_formation(rows):
 
         # For letter "B"
         mid = rows // 2
-        if i == 2 or i == rows-1 or i == mid+1:
+        if i == 2 or i == rows - 1 or i == mid + 1:
             print("*", end="")
         for j in range(rows):
-            if i == 2 or i == rows-1 or i == mid+1:
+            if i == 2 or i == rows - 1 or i == mid + 1:
                 if j < rows - 1:
                     print(" ", end="")
             else:
@@ -71,23 +70,70 @@ def name_formation(rows):
                 else:
                     print("*", end="")
         for j in range(rows):
-            if i == 2 or i == rows-1 or i == mid+1:
-                if j>=rows-2:
-                    print("*",end="")
+            if i == 2 or i == rows - 1 or i == mid + 1:
+                if j >= rows - 2:
+                    print("*", end="")
                 else:
                     print(" ", end="")
-            elif i <mid or i <rows -1 :
-                if j==rows-2:
-                    if i==1 or i==rows:
+            elif i < mid or i < rows - 1:
+                if j == rows - 2:
+                    if i == 1 or i == rows:
                         print("*", end="")
                     else:
-                        print(" ",end="")
+                        print(" ", end="")
                 else:
                     print("*", end="")
             else:
                 print("*", end="")
 
+        print(" " * 2, end="")
+
+        # For letter "H"
+        for j in range(rows):
+            if 1 < i < rows:
+                if j == 1:
+                    print(" ", end="")
+                elif i == rows // 2 + 1 and j > 1:
+                    print(" ", end="")
+                else:
+                    print("*", end="")
+            else:
+                print("*", end="")
+
+        for j in range(rows):
+            if 1 < i < rows:
+                if j == rows - 2:
+                    print(" ", end="")
+                elif i == rows // 2 + 1 and j < rows-1:
+                    print(" ", end="")
+                else:
+                    print("*", end="")
+            else:
+                print("*", end="")
+
+        print(" " * 2, end="")
+
+        # For letter "A"
+        for j in range(rows + 1 - i):
+            print("*", end="")
+        if i == rows // 2 + 1:
+            print("*" * ((i - 1) * 2), end="")
+        else:
+            print(" " * ((i - 1) * 2), end="")
+        for j in range(rows + 1 - i):
+            print("*", end="")
+
+        print(" " * 2, end="")
+
+        # For letter "V"
+        for j in range(i):
+            print("*", end='')
+        print(" " * ((rows - i) * 2), end="")
+        for j in range(i):
+            print("*", end='')
+
         print()
+
 
 if __name__ == '__main__':
     rows_number = int(input("Enter the rows:"))
